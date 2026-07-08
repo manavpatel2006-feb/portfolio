@@ -1,0 +1,151 @@
+.skill-details{
+    min-height:100vh;
+    background:linear-gradient(135deg,#0f172a,#111827,#1e293b);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:80px 20px;
+}
+
+.skill-card{
+    width:900px;
+    max-width:100%;
+    background:#1e293b;
+    border-radius:25px;
+    padding:50px;
+    color:#fff;
+    border:2px solid #00f5ff;
+    box-shadow:0 0 20px rgba(0,245,255,.3);
+    transition:.4s;
+}
+
+.skill-card:hover{
+    transform:translateY(-8px);
+    box-shadow:
+    0 0 20px #00f5ff,
+    0 0 40px #00ff88,
+    0 0 60px #8b5cf6;
+}
+
+.skill-icon-big{
+    font-size:90px;
+    color:#00f5ff;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.skill-card h1{
+    text-align:center;
+    font-size:55px;
+    color:#00f5ff;
+    margin-bottom:10px;
+}
+
+.skill-card h4{
+    text-align:center;
+    color:#cbd5e1;
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+.skill-card p{
+    font-size:18px;
+    color:#d1d5db;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.skill-card h2{
+    color:#00f5ff;
+    margin-bottom:15px;
+    margin-top:25px;
+}
+
+.progress{
+    width:100%;
+    height:16px;
+    background:#334155;
+    border-radius:50px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    background:linear-gradient(90deg,#00f5ff,#00ff88);
+    border-radius:50px;
+    animation:fillBar 1.5s ease;
+}
+
+@keyframes fillBar{
+    from{
+        width:0;
+    }
+}
+
+.skill-card h3{
+    text-align:right;
+    color:#00f5ff;
+    margin-top:10px;
+    font-size:24px;
+}
+
+.skill-card ul{
+    list-style:none;
+    padding:0;
+    margin-top:20px;
+}
+
+.skill-card li{
+    background:#0f172a;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:15px;
+    border-left:5px solid #00f5ff;
+    transition:.3s;
+}
+
+.skill-card li:hover{
+    background:#111827;
+    transform:translateX(8px);
+}
+
+.back-btn{
+    display:inline-block;
+    margin-top:40px;
+    padding:14px 35px;
+    background:#00f5ff;
+    color:#111827;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.back-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px #00f5ff;
+}
+
+@media(max-width:768px){
+
+.skill-card{
+    padding:30px;
+}
+
+.skill-card h1{
+    font-size:38px;
+}
+
+.skill-icon-big{
+    font-size:70px;
+}
+
+.skill-card p{
+    font-size:16px;
+}
+
+.skill-card h4{
+    font-size:18px;
+}
+
+}

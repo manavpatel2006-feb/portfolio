@@ -1,0 +1,122 @@
+.about-details{
+    min-height:100vh;
+    background:linear-gradient(135deg,#0f172a,#111827,#1e293b);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:80px 20px;
+}
+
+.about-details-card{
+    width:900px;
+    max-width:100%;
+    background:#1e293b;
+    border:2px solid #00f5ff;
+    border-radius:25px;
+    padding:50px;
+    color:white;
+    box-shadow:0 0 25px rgba(0,245,255,.25);
+    transition:.4s;
+}
+
+.about-details-card:hover{
+    transform:translateY(-8px);
+    box-shadow:
+        0 0 20px #00f5ff,
+        0 0 40px #00ff88,
+        0 0 60px #8b5cf6;
+}
+
+.about-details-card h1{
+    text-align:center;
+    font-size:52px;
+    color:#00f5ff;
+    margin-bottom:10px;
+}
+
+.about-details-card h3{
+    text-align:center;
+    color:#cbd5e1;
+    font-size:24px;
+    margin-bottom:30px;
+}
+
+.about-details-card p{
+    text-align:center;
+    color:#d1d5db;
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+.details-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:20px;
+}
+
+.detail-item{
+    background:#0f172a;
+    padding:20px;
+    border-radius:15px;
+    border-left:5px solid #00f5ff;
+    font-size:17px;
+    transition:.3s;
+}
+
+.detail-item:hover{
+    transform:translateX(8px);
+    background:#111827;
+    box-shadow:0 0 15px rgba(0,245,255,.35);
+}
+
+.back-btn{
+    display:block;
+    width:220px;
+    margin:50px auto 0;
+    text-align:center;
+    text-decoration:none;
+    background:#00f5ff;
+    color:#111827;
+    font-weight:bold;
+    padding:15px 30px;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.back-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px #00f5ff;
+}
+
+@media(max-width:768px){
+
+.about-details-card{
+    padding:30px;
+}
+
+.about-details-card h1{
+    font-size:38px;
+}
+
+.about-details-card h3{
+    font-size:20px;
+}
+
+.about-details-card p{
+    font-size:16px;
+}
+
+.details-list{
+    grid-template-columns:1fr;
+}
+
+.detail-item{
+    font-size:16px;
+}
+
+.back-btn{
+    width:100%;
+}
+
+}
