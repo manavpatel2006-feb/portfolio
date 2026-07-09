@@ -1,6 +1,6 @@
-const nodemailer = require("nodemailer");
-console.log("CONTACT API HIT");
-exports.sendMail = async (req, res) => {
+import nodemailer from "nodemailer";
+
+export const sendMail = async (req, res) => {
   const { name, email, mobile, subject, message } = req.body;
 
   try {
