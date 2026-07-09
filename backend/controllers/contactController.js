@@ -12,13 +12,14 @@ export const sendMail = async (req, res) => {
       },
     });
 
-    await transporter.verify();
+   // await transporter.verify();//
     console.log("✅ SMTP Connected Successfully");
 
     // ==========================
     // 1. EMAIL TO YOU
     // ==========================
-
+console.log("Request Received");
+console.log(req.body);
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
