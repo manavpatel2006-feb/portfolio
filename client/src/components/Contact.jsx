@@ -19,26 +19,29 @@ function Contact() {
   };
 
   const handleSubmit = async (e) => {
-    if (e) e.preventDefault();
+    e.preventDefault();
 
     if (loading) return;
 
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          mobile: formData.mobile,
-          subject: "Portfolio Contact",
-          message: formData.message,
-        }),
-      });
+      const response = await fetch(
+        "https://portfolio-backend-dfr4.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            mobile: formData.mobile,
+            subject: "Portfolio Contact",
+            message: formData.message,
+          }),
+        }
+      );
 
       const data = await response.json();
 
@@ -52,40 +55,30 @@ function Contact() {
           message: "",
         });
       } else {
-        alert("❌ Failed to send message");
+        alert(data.message || "Failed to send message");
       }
-    } catch (error) {
-      console.error(error);
+    } catch (err) {
+      console.error(err);
       alert("❌ Server Error");
     }
 
     setLoading(false);
   };
 
-  // ENTER key se bhi submit hoga
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      handleSubmit();
-    }
-  };
-
   return (
     <section className="contact" id="contact">
       <h2>Contact Me</h2>
 
-      <p>
-        Have a project idea or want to work together? Feel free to contact me.
-      </p>
+      <p>Have a project idea or want to work together? Feel free to contact me.</p>
 
       <form className="contact-form" onSubmit={handleSubmit}>
+
         <input
           type="text"
           name="name"
           placeholder="Your Name"
           value={formData.name}
           onChange={handleChange}
-          onKeyDown={handleKeyDown}
           required
         />
 
@@ -95,7 +88,6 @@ function Contact() {
           placeholder="Your Email"
           value={formData.email}
           onChange={handleChange}
-          onKeyDown={handleKeyDown}
           required
         />
 
@@ -105,7 +97,6 @@ function Contact() {
           placeholder="Your Mobile Number"
           value={formData.mobile}
           onChange={handleChange}
-          onKeyDown={handleKeyDown}
           pattern="[0-9]{10}"
           maxLength={10}
           required
@@ -117,13 +108,13 @@ function Contact() {
           placeholder="Your Message"
           value={formData.message}
           onChange={handleChange}
-          onKeyDown={handleKeyDown}
           required
-        ></textarea>
+        />
 
         <button type="submit" disabled={loading}>
           {loading ? "Sending..." : "Send Message"}
         </button>
+
       </form>
     </section>
   );
